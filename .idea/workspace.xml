@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +22,30 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bot.py" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Start bot" type="PythonConfigurationType" factoryName="Python">
+      <module name="The end3rbot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Flavia\.virtualenvs\The_end3rbot-cfKzd-Py\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -56,22 +77,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1590355994911" />
-    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1590355399416">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590357678918">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590355399416" />
-    <state x="553" y="262" key="Github.ShareDialog" timestamp="1590356454237">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1590357678918" />
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1590357646378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="553" y="262" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1590356454237" />
-    <state x="487" y="69" key="Github.UntrackedFilesDialog" timestamp="1590356460917">
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590357646378" />
+    <state x="553" y="262" key="Github.ShareDialog" timestamp="1590356839538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="487" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590356460917" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1590356064130">
+    <state x="553" y="262" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1590356839538" />
+    <state x="487" y="69" key="Github.UntrackedFilesDialog" timestamp="1590356856438">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590356064130" />
+    <state x="487" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590356856438" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1590356872651">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590356872651" />
     <state x="454" y="265" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1590356056773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
