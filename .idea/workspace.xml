@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2">
-      <change afterPath="$PROJECT_DIR$/ccdocs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/customCommand.py" afterDir="false" />
-    </list>
+    <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590791308461</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="custom commands!">
+      <created>1590954625020</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590954625020</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,7 +137,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit x2" />
     <MESSAGE value="Y E S" />
-    <option name="LAST_COMMIT_MESSAGE" value="Y E S" />
+    <MESSAGE value="custom commands!" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom commands!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1590355994911">
@@ -198,10 +201,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590790085039" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1590791390471">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1590954650795">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590791390471" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1590954650795" />
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590955127918">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1590955127918" />
     <state x="454" y="265" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1590356056773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
