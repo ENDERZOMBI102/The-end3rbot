@@ -63,7 +63,7 @@ this is an example implementing a "whats the latest version of" command
     "needVar" : true,
     "data": {
         "urljson": "paramVar",
-        "sections": ["tagName"]
+        "sections": ["tag_name"]
     }
 }
 """
