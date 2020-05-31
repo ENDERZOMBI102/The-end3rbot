@@ -24,62 +24,47 @@ def addCustomCommand( data: str = None ):
 
 # TODO: order please!
 # TODO: add key pressing as action
-def customCommand( command: str = None ):
-    comDict = customCommands[command]
-    if 'get' in comDict.keys():
-        if 'url' in comDict['get'].keys():
-            data = req.get(comDict['get']['url']).text
-        elif 'urljson' in comDict['get'].keys():
-            if not 'sections' in comDict['get'].keys():
-                chat.send('you didn\'t put a "sections" section in the "get" action!')
-                return
-            if len(comDict['get']['sections']) == 2:
-                data = req.get(comDict['get']['url']).json()[comDict['get']['sections'][0]][comDict['get']['sections'][1]]
-            elif len(comDict['get']['sections']) == 1:
-                data = req.get(comDict['get']['url']).json()[comDict['get']['sections'][0]]
-        elif 'load' in comDict['get'].keys():
-            if not customCommandsData[comDict['get']['load']]:
-                chat.send(f'data {comDict["get"]["load"]} doens\'t exist!')
-                return
-            data = customCommandsData[comDict['get']['load']]
-    if 'send' in comDict.keys():
-        try:
-            print(data)
-            chat.send( comDict['send'].replace( '{}', data ) )
-            print('sended')
-        except Exception as e:
-            print(f'ERROR: {e}')
-            chat.send( comDict['send'] )
-
-
-class CustomCommand:
-    def __init__(self, commandData: dict = None, param = None):
-        # the text
-        try: self.text = commandData['send']
-        except: self.text = None
-        # replace the text with parameter
-        try: self.text = self.text.replace('{}', param)
-        except: self.text = None
-
-
-    def send(self):
-        chat.send(self.text)
-
-    def get(self):
+def customCommand( comDict: dict = None, variable: str = None ):
+    # if the command should forcily have a parameter and it doesn't, send an error
+    try:
+        if ( comDict['needVar'] is True ) and ( variable is None ):
+            chat.send('ERROR, expected parameter')
 
 
 """
-a command dict that contains all the possible options
+a command object that contains all the possible options
     {
         "send": "",
         "press": "",
+        "varIsPing": true,
+        "needVar": true,
         "paramReplace": "",
-        "get": {
+        "canBeUsedBy": "", # everyone, mod, streamer
+        "data": {
             "url": "",
             "urljson": "",
-            "sections": []
+            "sections": [],
+            "load" : "varname",
+            "saveAs" : ["varName", "url"]
         }
     }
 
+this is an example implementing a ban command
+{
+    "send": "/ban {}",
+    "varIsMention": true, // this can be omitted, this makes the command strip the @
+    "needVar": true,
+    "paramReplace" : "{}"
+}
+this is an example implementing a "whats the latest version of" command
+{
+    "send": "latest version of {0} is: {}",
+    "paramReplace" : "{0}",
+    "needVar" : true,
+    "data": {
+        "urljson": "paramVar",
+        "sections": ["tagName"]
+    }
+}
 """
 

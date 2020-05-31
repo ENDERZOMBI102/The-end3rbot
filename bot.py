@@ -50,7 +50,7 @@ def handler(message: twitch.chat.Message):
     print(f' command: {command}, variable: {variable}, has ping: {hasPing}, is custom: {isCustom}')
     if isCustom:
         # is a custom command, execute it with the cc handler
-        customCommand(command, variable)
+        customCommand(customCommands[command], variable)
         return
     # not a custom command, use normal handler
     if command == 'pause' and os.getenv('CHANNEL') is '#enderzombi102':
