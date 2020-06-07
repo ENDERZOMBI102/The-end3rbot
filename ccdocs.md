@@ -4,7 +4,7 @@ Custom Commands are a powerful feature of this bot, they can do almost anything,
 sending a command to press a key on your keyboard.<br>
 and they're simple as json! (hjson support coming soon)
 
-for a description of the terms used in this document see [dictionary]()<br>
+for a description of the terms used in this document see [dictionary](#dictionary)<br>
 order of execution:<br>
 command executed->variable checks->data operations->paramReplace->press->send->stop
 
@@ -86,7 +86,7 @@ example:
 }
 ```
 this makes the command usable _only_ by the given value<br>
-you can use as a value: everyone, mod, streamer
+you can use as a value: everyone, op, mod, streamer
 
 data
 -
@@ -108,7 +108,7 @@ example:
   }
 }
 ```
-this will replace a {} in the send action with the text contained in the file pointed by the given URL
+this will replace a {url} in the send action with the text contained in the file pointed by the given URL
 
 urljson
 -
@@ -121,7 +121,7 @@ example:
   }
 }
 ```
-this will replace a {} with the value inside the last section given in the json file pointed by the URL<br>
+this will replace a {json} with the value inside the last section given in the json file pointed by the URL<br>
 (i know, this sounds difficult, but it is not)
 
 sections
