@@ -102,6 +102,19 @@ def addCustomCommand( strdata: str ) -> None:
 # TODO: order please!
 # TODO: add key pressing as action
 def customCommand( comDict: dict = None, variable: str = None ):
+    """
+    :param comDict: command to execute
+    :param variable: command variable
+    """
+    """
+    an action is usually build like this:
+    if 'actionkey' in comDict.keys() # to check if its in the command
+        -action operations-
+        if error: # metaphor for error catching
+            chat.send('error message') # send error info, example: 'you forgot a parameter'
+            return # 'return because its an error, cannot continue
+    
+    """
     # if the command should have a parameter and it doesn't, send an error
     # variable checks
     if 'needVar' in comDict.keys():  # check if the command needs a variable
@@ -116,7 +129,13 @@ def customCommand( comDict: dict = None, variable: str = None ):
             if variable.startswith('@'):  # is mention?
                 pass  # yes
             else:
-                chat.send('this command needs a parameter.')
+                chat.send('this command needs a mention as parameter.')
                 return  # no
-    if
-
+    # data operations
+    #  url action
+    if 'url' in comDict['data'].keys():
+        try:
+            comDict['send'].replace('{url}', req.get(comDict['data']['url']).text)
+        except Exception as e:
+            chat.send(f'An error occurred while processing "url": {e}')
+    #
