@@ -156,4 +156,13 @@ def customCommand( comDict: dict = None, variable: str = None ):
                 '{urljson}',  # what to replace
                 data[comDict['data']['sections'][0]][comDict['data']['sections'][1]]  # replace with
             )
-
+    # load action
+    if 'load' in comDict['data'].keys():
+        try:
+            comDict['send'] = comDict['send'].replace(
+                '{var}',
+                customCommandsData[comDict['data']['load']]
+            )
+        except:
+            chat.send(f'An error occurred while processing "load": no variable named {comDict["data"]["load"]}')
+            return  # error!
