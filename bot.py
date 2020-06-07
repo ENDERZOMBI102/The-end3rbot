@@ -3,33 +3,15 @@ import keyboard
 import asyncio
 import json
 import os
-from customCommand import customCommand, addCustomCommand
+from customCommand import *
 import dotenv
 
 
 symbol = '!'
 timeout = False
 counter: int = 0
-
-customCommands = \
-{
-    'exampleCommand' : {
-        'text' : 'this is an example {url}',
-        'get' : {
-            'url' : 'https://raw.githubusercontent.com/ENDERZOMBI102/ucpDatabase/master/.gitignore'
-        }
-    },
-    'exampleCommand2' : {
-        'text' : 'this is another example {}',
-        'get' : {
-            'urljson' : '',
-            'sections': ['first', 'second']
-        }
-    }
-}
-
-
-customCommandsData = {}
+chat: twitch.Chat
+user: str = '#enderzombi102'
 
 
 def handler(message: twitch.chat.Message):
@@ -81,7 +63,7 @@ async def count(seconds: int = 10):
 
 if __name__ == '__main__':
     dotenv.load_dotenv()
-    chat = twitch.Chat(channel=os.getenv('CHANNEL'),
+    chat = twitch.Chat(channel=os.getenv('CHANNEL').lower(),
                        nickname=os.getenv('USERNAME'),
                        oauth=os.getenv('OAUTH_TOKEN')
                        )
