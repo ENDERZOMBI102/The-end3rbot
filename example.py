@@ -19,7 +19,7 @@ a command object that contains all the possible options
 this is an example implementing a ban command
 {
     "send": "/ban {}",
-    "varIsMention": true, // this can be omitted, this makes the command strip the @
+    "varIsPing": true, // this can be omitted, this makes the command strip the @
     "needVar": true,
     "paramReplace" : "{}"
 }
