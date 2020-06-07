@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccdocs.md" beforeDir="false" afterPath="$PROJECT_DIR$/ccdocs.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/customCommand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +194,28 @@
       <option name="project" value="LOCAL" />
       <updated>1591562834624</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="more comments">
+      <created>1591563011370</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1591563011370</updated>
+    </task>
+    <task id="LOCAL-00016" summary=".idea">
+      <created>1591563020979</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1591563020979</updated>
+    </task>
+    <task id="LOCAL-00017" summary="i ping u">
+      <created>1591563219103</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591563219103</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,9 +240,11 @@
     <MESSAGE value="finished command checking" />
     <MESSAGE value="command examples" />
     <MESSAGE value="bot version" />
-    <MESSAGE value=".idea" />
     <MESSAGE value="typo in comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="typo in comment" />
+    <MESSAGE value="more comments" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="i ping u" />
+    <option name="LAST_COMMIT_MESSAGE" value="i ping u" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1590355994911">
