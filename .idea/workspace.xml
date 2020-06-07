@@ -248,7 +248,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591566364758</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="acton: urljson&#10;comments: Y E S">
+      <created>1591566806911</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591566806911</updated>
+    </task>
+    <task id="LOCAL-00024" summary=".idea">
+      <created>1591566813877</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1591566813877</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,14 +288,15 @@
     <MESSAGE value="bot version" />
     <MESSAGE value="typo in comment" />
     <MESSAGE value="more comments" />
-    <MESSAGE value=".idea" />
     <MESSAGE value="i ping u" />
     <MESSAGE value="added ooe" />
     <MESSAGE value="idr" />
     <MESSAGE value="idea" />
     <MESSAGE value="updated docs" />
     <MESSAGE value="YES! MORE COMMENTS! YES!" />
-    <option name="LAST_COMMIT_MESSAGE" value="YES! MORE COMMENTS! YES!" />
+    <MESSAGE value="acton: urljson&#10;comments: Y E S" />
+    <MESSAGE value=".idea" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1590355994911">
@@ -348,10 +363,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590790085039" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591566382055">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591566822009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591566382055" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591566822009" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590955127918">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
