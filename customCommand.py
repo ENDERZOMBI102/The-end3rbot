@@ -111,13 +111,12 @@ def customCommand( comDict: dict = None, variable: str = None ):
             else:
                 chat.send('this command needs a parameter.')  # no
                 return
-    try:
-        if comDict['needVar'] is True:
-            if variable is not None:
-                pass
+    if 'varIsPing' in comDict.keys():  # check if the variable needs to be a ping
+        if comDict['varIsPing'] is True:
+            if variable.startswith('@'):  # is mention?
+                pass  # yes
             else:
                 chat.send('this command needs a parameter.')
-                return
-    except:
-        pass
+                return  # no
+    if
 
