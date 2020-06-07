@@ -163,5 +163,5 @@ object: a new { } encapsulated section<br>
 ping: a username starting with @<br>
 mention: same as above<br>
 parameter: a string put after the command<br>
-variable: same as above<br>
+variable: a saved value<br>
 command: a line of text that makes the bot doing something<br>
