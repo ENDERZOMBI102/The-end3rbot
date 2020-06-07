@@ -4,7 +4,9 @@ Custom Commands are a powerful feature of this bot, they can do almost anything,
 sending a command to press a key on your keyboard.<br>
 and they're simple as json! (hjson support coming soon)
 
-for a description of the terms used in this document see [dictionary]()
+for a description of the terms used in this document see [dictionary]()<br>
+order of execution:<br>
+command executed->variable checks->data operations->paramReplace->press->send->stop
 
 |section|value|parent|depends on|
 |-------|-----|------|----------|
