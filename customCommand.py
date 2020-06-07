@@ -135,7 +135,25 @@ def customCommand( comDict: dict = None, variable: str = None ):
     #  url action
     if 'url' in comDict['data'].keys():
         try:
-            comDict['send'].replace('{url}', req.get(comDict['data']['url']).text)
+            comDict['send'] = comDict['send'].replace('{url}', req.get(comDict['data']['url']).text)
         except Exception as e:
             chat.send(f'An error occurred while processing "url": {e}')
-    #
+            return  # error!
+    #  urljson action
+    if 'urljson' in comDict['data'].keys():
+        try:
+            data = req.get(comDict['data']['url']).json()
+        except Exception as e:
+            chat.send(f'An error occurred while processing "urljson": {e}')
+            return  # error!
+        if len(comDict['data']['sections']) is 1:  # 1 section
+            comDict['send'] = comDict['send'].replace(  # replace
+                '{urljson}',  # what to replace
+                data[comDict['data']['sections'][0]]  # replace with
+            )
+        else:  # two sections
+            comDict['send'] = comDict['send'].replace(  # replace
+                '{urljson}',  # what to replace
+                data[comDict['data']['sections'][0]][comDict['data']['sections'][1]]  # replace with
+            )
+
