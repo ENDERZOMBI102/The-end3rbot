@@ -104,7 +104,7 @@ def addCustomCommand( strdata: str ) -> None:
 def customCommand( comDict: dict = None, variable: str = None ):
     # if the command should forcily have a parameter and it doesn't, send an error
     # variable checks
-    if 'needVar' in comDict.keys(): # hceck if the command needs a variable
+    if 'needVar' in comDict.keys(): # check if the command needs a variable
         if comDict['needVar'] is True:
             if variable is not None:
                 pass
