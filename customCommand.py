@@ -90,26 +90,26 @@ def addCustomCommand( strdata: str ) -> None:
             if '{var}' in data['send']:
                 chat.send('no "{var}" in "send" value ('+data['send']+')')
                 return
-    name = data['name']
-    del data['name']
-    customCommands[name] = data
-    with open('./commands.json', 'w') as file:
+    name = data['name']  # save the command name
+    del data['name']  # delete the name key
+    customCommands[name] = data  # create the command under the command name
+    with open('./commands.json', 'w') as file:  # save all in the config file
         json.dump(customCommands, file, indent=4)
-    chat.send(f'command "{name}" successfully added')
+    chat.send(f'command "{name}" successfully added')  # send success notice
 
 
 # this is the function that take care of command execution
 # TODO: order please!
 # TODO: add key pressing as action
 def customCommand( comDict: dict = None, variable: str = None ):
-    # if the command should forcily have a parameter and it doesn't, send an error
+    # if the command should have a parameter and it doesn't, send an error
     # variable checks
-    if 'needVar' in comDict.keys(): # check if the command needs a variable
+    if 'needVar' in comDict.keys():  # check if the command needs a variable
         if comDict['needVar'] is True:
-            if variable is not None:
-                pass
+            if variable is not None:  # variable?
+                pass  # yes
             else:
-                chat.send('this command needs a parameter.')
+                chat.send('this command needs a parameter.')  # no
                 return
     try:
         if comDict['needVar'] is True:
