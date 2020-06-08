@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/customCommand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +312,42 @@
       <option name="project" value="LOCAL" />
       <updated>1591653263730</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fi">
+      <created>1591653759464</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1591653759464</updated>
+    </task>
+    <task id="LOCAL-00033" summary="n">
+      <created>1591653767681</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1591653767681</updated>
+    </task>
+    <task id="LOCAL-00034" summary="now checks if the user can run the command">
+      <created>1591653786104</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1591653786104</updated>
+    </task>
+    <task id="LOCAL-00035" summary="corrected example.py">
+      <created>1591653800320</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1591653800320</updated>
+    </task>
+    <task id="LOCAL-00036">
+      <created>1591653806264</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1591653806264</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -330,8 +363,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit x2" />
-    <MESSAGE value="Y E S" />
     <MESSAGE value="custom commands!" />
     <MESSAGE value="fixed typo" />
     <MESSAGE value="removed useless var" />
@@ -352,6 +383,10 @@
     <MESSAGE value="almost finished" />
     <MESSAGE value="now with 100% more bugs" />
     <MESSAGE value="finished custom command api" />
+    <MESSAGE value="added channels.json to gitignore" />
+    <MESSAGE value="finished part 2" />
+    <MESSAGE value="now checks if the user can run the command" />
+    <MESSAGE value="corrected example.py" />
     <MESSAGE value=".idea" />
     <option name="LAST_COMMIT_MESSAGE" value=".idea" />
   </component>
@@ -380,38 +415,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="487" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590356856438" />
-    <state width="1345" height="223" key="GridCell.Tab.0.bottom" timestamp="1591653628558">
+    <state width="1345" height="223" key="GridCell.Tab.0.bottom" timestamp="1591654463547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591653628558" />
-    <state width="1345" height="223" key="GridCell.Tab.0.center" timestamp="1591653628558">
+    <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591654463547" />
+    <state width="1345" height="223" key="GridCell.Tab.0.center" timestamp="1591654463547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591653628558" />
-    <state width="1345" height="223" key="GridCell.Tab.0.left" timestamp="1591653628557">
+    <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591654463547" />
+    <state width="1345" height="223" key="GridCell.Tab.0.left" timestamp="1591654463547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591653628557" />
-    <state width="1345" height="223" key="GridCell.Tab.0.right" timestamp="1591653628558">
+    <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591654463547" />
+    <state width="1345" height="223" key="GridCell.Tab.0.right" timestamp="1591654463547">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591653628558" />
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1591653631642">
+    <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591654463547" />
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1591654463334">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591653631642" />
-    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1591653631641">
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591654463334" />
+    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1591654463333">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591653631641" />
-    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1591653631641">
+    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591654463333" />
+    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1591654463333">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591653631641" />
-    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1591653631641">
+    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591654463333" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1591654463333">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591653631641" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591654463333" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1590854086692">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -420,10 +455,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590790085039" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591653252802">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591653810381">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591653252802" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591653810381" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590955127918">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
