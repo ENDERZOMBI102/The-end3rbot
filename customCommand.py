@@ -11,23 +11,10 @@ operators: list
 moderators: list
 # current channel name
 channel: str
-
-customCommandsData = {}
-commandList = {
-    'exampleCommand' : {
-        'text' : 'this is an example {url}',
-        'data' : {
-            'url' : 'https://raw.githubusercontent.com/ENDERZOMBI102/ucpDatabase/master/.gitignore'
-        }
-    },
-    'exampleCommand2' : {
-        'text' : 'this is another example {}',
-        'data' : {
-            'urljson' : '',
-            'sections': ['first', 'second']
-        }
-    }
-}
+# custom commands data
+customCommandsData: dict
+# custom commands list
+commandList: dict
 
 
 def init(c: twitch.Chat, ops: list, mods: list, chnnl: str):
@@ -138,13 +125,13 @@ def execute( command: str, variable: str, sender: str):
         if validUser == 'everyone':  # can be used by everyone
             pass
         elif validUser == 'op':  # can be used by channel operators
-            if msg.sender not in operators:
+            if sender not in operators:
                 return
         elif validUser == 'mod':  # can be used by channel moderators
-            if msg.sender not in moderators:
+            if sender not in moderators:
                 return
         elif validUser == 'streamer':   # can be used by streamer
-            if not msg.sender.lower() == channel.lower().replace('#', ''):
+            if not sender.lower() == channel.lower().replace('#', ''):
                 return
         else:
             chat.send(f'ERROR: unknown "canBeUsedBy" value {validUser}')
@@ -170,6 +157,7 @@ def execute( command: str, variable: str, sender: str):
     if 'data' in comDict.keys():
         if 'url' in comDict['data'].keys():
             try:
+                print(comDict['data']['url'])
                 comDict['send'] = comDict['send'].replace('{url}', req.get(comDict['data']['url']).text)
             except Exception as e:
                 chat.send(f'An error occurred while processing "url": {e}')
