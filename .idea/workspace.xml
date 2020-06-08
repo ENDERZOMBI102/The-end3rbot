@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/customCommand.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -262,7 +263,42 @@
       <option name="project" value="LOCAL" />
       <updated>1591566813877</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="action: load&#10;comment: no">
+      <created>1591567020514</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1591567020514</updated>
+    </task>
+    <task id="LOCAL-00026">
+      <created>1591567029338</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1591567029338</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added canBeUsedBy in order of execution">
+      <created>1591651761550</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1591651761550</updated>
+    </task>
+    <task id="LOCAL-00028" summary="almost finished">
+      <created>1591651773588</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1591651773588</updated>
+    </task>
+    <task id="LOCAL-00029" summary="now with 100% more bugs">
+      <created>1591651792407</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1591651792407</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,8 +331,12 @@
     <MESSAGE value="updated docs" />
     <MESSAGE value="YES! MORE COMMENTS! YES!" />
     <MESSAGE value="acton: urljson&#10;comments: Y E S" />
+    <MESSAGE value="action: load&#10;comment: no" />
     <MESSAGE value=".idea" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea" />
+    <MESSAGE value="added canBeUsedBy in order of execution" />
+    <MESSAGE value="almost finished" />
+    <MESSAGE value="now with 100% more bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="now with 100% more bugs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1590355994911">
@@ -323,38 +363,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="487" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590356856438" />
-    <state width="1345" height="223" key="GridCell.Tab.0.bottom" timestamp="1590791437748">
+    <state width="1345" height="223" key="GridCell.Tab.0.bottom" timestamp="1591653175722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590791437748" />
-    <state width="1345" height="223" key="GridCell.Tab.0.center" timestamp="1590791437748">
+    <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591653175722" />
+    <state width="1345" height="223" key="GridCell.Tab.0.center" timestamp="1591653175722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590791437748" />
-    <state width="1345" height="223" key="GridCell.Tab.0.left" timestamp="1590791437748">
+    <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591653175722" />
+    <state width="1345" height="223" key="GridCell.Tab.0.left" timestamp="1591653175721">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590791437748" />
-    <state width="1345" height="223" key="GridCell.Tab.0.right" timestamp="1590791437748">
+    <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591653175721" />
+    <state width="1345" height="223" key="GridCell.Tab.0.right" timestamp="1591653175722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590791437748" />
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1590791437748">
+    <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591653175722" />
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1591653175723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590791437748" />
-    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1590791437748">
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591653175723" />
+    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1591653175722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590791437748" />
-    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1590791437748">
+    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591653175722" />
+    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1591653175722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590791437748" />
-    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1590791437748">
+    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591653175722" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1591653175723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590791437748" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591653175723" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1590854086692">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -363,10 +403,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590790085039" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591566822009">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591567032634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591566822009" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591567032634" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590955127918">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
