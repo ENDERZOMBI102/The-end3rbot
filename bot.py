@@ -14,6 +14,12 @@ channel: str = 'CHANNEL_1'
 operators: list
 moderators: list
 chat: twitch.Chat = None
+comBaseDocs: list = \
+[
+    'addCommand: add a custom command',
+    'cmds: dispaly this message'
+]
+comDocs: list
 
 
 def handler(message: twitch.chat.Message):
@@ -47,9 +53,12 @@ def handler(message: twitch.chat.Message):
     elif command == 'addCommand':
         # add a custom command
         customCommand.add(variable)
-
-    elif command == 'minecraft':
-        chat.send('ikr, tuff should play minecraft!')
+        updatehelp()
+    elif command == 'cmds':
+        helpString: str
+        for doc in comDocs:
+            helpString += doc + "  "
+        chat.send(helpString)
 
 
 async def waitForTimeout():
@@ -65,6 +74,16 @@ async def count(seconds: int = 10):
         await asyncio.sleep(1)
         counter += 1
     counter = 0
+
+def updatehelp():
+    global comDocs
+    if customCommand.dirty is False:
+        return
+    comDocs = comBaseDocs
+    for cmd in customCommand.commandList:
+        if 'help' in cmd.keys():
+            comDocs.append(cmd['help'])
+    customCommand.dirty = False
 
 
 if __name__ == '__main__':
