@@ -34,7 +34,7 @@ def handler(message: twitch.chat.Message):
     print(f' command: {command}, variable: {variable}, has ping: {hasPing}, is custom: {isCustom}')
     if isCustom:
         # is a custom command, execute it with the cc handler
-        customCommand.execute(command, variable, message)
+        customCommand.execute(command, variable, message.sender)
         return
     # not a custom command, use normal handler
     elif command == 'pause' and os.getenv('CHANNEL') is '#enderzombi102':
@@ -76,17 +76,17 @@ if __name__ == '__main__':
         oauth=os.getenv('OAUTH_TOKEN')
     )
     chat.subscribe(handler)
-    with open('./channels.json', 'r') as file:
+    with open('channels.json', 'r') as file:
         channels = json.load(file)
     if channel not in channels:
         channels[channel] = \
             {
                 'operators' : [channel.replace('#', '')],
-                'mods' : [channel.replace('#', '')],
+                'moderators' : [channel.replace('#', '')],
                 'symbol' : '!'
             }
-        with open('./channels.json', 'w') as file:
-            json.dump(channels, file)
+        with open('channels.json', 'w') as file:
+            json.dump(channels, file, indent=4)
     operators = channels[channel]['operators']
     moderators = channels[channel]['moderators']
     symbol = channels[channel]['symbol']
