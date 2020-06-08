@@ -10,18 +10,18 @@ command executed->canBeUsedBy checks->variable checks->data operations->paramRep
 
 |section|value|parent|depends on|
 |-------|-----|------|----------|
-|[send]()|string|none|none|
-|[press]()|string/char|none|none|
-|[varIsPing]()|boolean|none|parameter|
-|[needVar]()|boolean|none|parameter|
-|[paramReplace]()|string|none|send, parameter|
-|[canBeUsedBy]()|string|none|none|
-|[data]()|object|none|- - - - - - -|
-|[url]()|string|data|send|
-|[urljson]()|string|data|send, sections|
-|[sections]()|array(string)|data|urljson|
-|[load]()|string|data|send|
-|[saveAs]()|array(string)|data|parameter|
+|[send](#send)|string|none|none|
+|[press](#press)|string/char|none|none|
+|[varIsPing](#varIsPing)|boolean|none|parameter|
+|[needVar](#needVar)|boolean|none|parameter|
+|[paramReplace](#paramReplace)|string|none|send, parameter|
+|[canBeUsedBy](#canBeUsedBy)|string|none|none|
+|[data](#data)|object|none|- - - - - - -|
+|[url](#url)|string|data|send|
+|[urljson](#urljson)|string|data|send, sections|
+|[sections](#sections)|array(string)|data|urljson|
+|[load](#load)|string|data|send|
+|[saveAs](#saveAs)|array(string)|data|parameter|
 
 send
 -
@@ -167,3 +167,5 @@ mention: same as above<br>
 parameter: a string put after the command<br>
 variable: a saved value<br>
 command: a line of text that makes the bot doing something<br>
+
+[go up](#Custom-Commands-Docs)
