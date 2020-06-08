@@ -6,7 +6,7 @@ and they're simple as json! (hjson support coming soon)
 
 for a description of the terms used in this document see [dictionary](#dictionary)<br>
 order of execution:<br>
-command executed->variable checks->data operations->paramReplace->press->send->stop
+command executed->canBeUsedBy checks->variable checks->data operations->paramReplace->press->send->stop
 
 |section|value|parent|depends on|
 |-------|-----|------|----------|
