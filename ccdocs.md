@@ -16,6 +16,7 @@ command executed->canBeUsedBy checks->variable checks->data operations->paramRep
 |[needVar](#needVar)|boolean|none|parameter|
 |[paramReplace](#paramReplace)|string|none|send, parameter|
 |[canBeUsedBy](#canBeUsedBy)|string|none|none|
+|[help](#help)|string|none|none|
 |[data](#data)|object|none|- - - - - - -|
 |[url](#url)|string|data|send|
 |[urljson](#urljson)|string|data|send, sections|
@@ -87,6 +88,16 @@ example:
 ```
 this makes the command usable _only_ by the given value<br>
 you can use as a value: everyone, op, mod, streamer
+
+help
+-
+example:
+```json
+{
+  "help": "this is the help text" 
+}
+```
+this is the text that is displayed in the cmds command for this cc
 
 data
 -
