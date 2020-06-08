@@ -6,6 +6,7 @@ import os
 import customCommand
 import dotenv
 
+# TODO: use classes!
 
 symbol = '!'
 timeout = False
