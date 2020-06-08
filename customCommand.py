@@ -9,7 +9,8 @@ chat: twitch.Chat
 operators: list
 # list of a channel moderators
 moderators: list
-
+# current channel name
+channel: str
 
 customCommandsData = {}
 commandList = {
@@ -29,9 +30,9 @@ commandList = {
 }
 
 
-def init(c: twitch.Chat, ops: list, mods: list):
-    global moderators, operators, chat, commandList
-    chat, operators, moderators = c, ops, mods  # put everything where it should be
+def init(c: twitch.Chat, ops: list, mods: list, chnnl: str):
+    global moderators, operators, chat, commandList, channel
+    chat, operators, moderators, channel = c, ops, mods, chnnl  # put everything where it should be
     with open('./commands.json', 'r') as file:
         commandList = json.load(file)  # load command list
 
@@ -134,13 +135,20 @@ def execute( command: str, variable: str, msg: twitch.chat.Message):
     # first check of all: canBeUsedBy, cuz if the user can't execute it, why bother?
     if 'canBeUsedBy' in comDict.keys():
         validUser = comDict['canBeUsedBy']
-        if validUser is 'everyone':
+        if validUser == 'everyone':  # can be used by everyone
             pass
-        elif validUser is 'op':
-            if msg.sender in operators:
-
-
-
+        elif validUser == 'op':  # can be used by channel operators
+            if msg.sender not in operators:
+                return
+        elif validUser == 'mod':  # can be used by channel moderators
+            if msg.sender not in moderators:
+                return
+        elif validUser == 'streamer':   # can be used by streamer
+            if not msg.sender.lower() == channel.lower().replace('#', ''):
+                return
+        else:
+            chat.send(f'ERROR: unknown "canBeUsedBy" value {validUser}')
+        del validUser
     # if the command should have a parameter and it doesn't, send an error
     # variable checks
     if 'needVar' in comDict.keys():  # check if the command needs a variable
