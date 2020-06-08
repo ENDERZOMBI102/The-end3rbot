@@ -116,7 +116,7 @@ def add( strdata: str ) -> None:
 # this is the function that take care of command execution
 # TODO: order please!
 # TODO: add key pressing as action
-def execute( command: str, variable: str, msg: twitch.chat.Message):
+def execute( command: str, variable: str, sender: str):
     """
     :param command: command name to execute
     :param variable: command variable
