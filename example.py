@@ -6,7 +6,7 @@ a command object that contains all the possible options
         "varIsPing": true,
         "needVar": true,
         "paramReplace": "",
-        "canBeUsedBy": "", # everyone, mod, streamer
+        "canBeUsedBy": "", # everyone, op, mod, streamer
         "data": {
             "url": "",
             "urljson": "",
