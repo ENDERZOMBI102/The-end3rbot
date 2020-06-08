@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccdocs.md" beforeDir="false" afterPath="$PROJECT_DIR$/ccdocs.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/customCommand.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -367,7 +369,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591654696986</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="now it starts again, yay!">
+      <created>1591655616928</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1591655616928</updated>
+    </task>
+    <task id="LOCAL-00041" summary=".idea">
+      <created>1591655636798</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1591655636798</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,7 +399,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed typo" />
     <MESSAGE value="removed useless var" />
     <MESSAGE value="finished command checking" />
     <MESSAGE value="command examples" />
@@ -407,6 +422,7 @@
     <MESSAGE value="now checks if the user can run the command" />
     <MESSAGE value="corrected example.py" />
     <MESSAGE value="added sender" />
+    <MESSAGE value="now it starts again, yay!" />
     <MESSAGE value=".idea" />
     <option name="LAST_COMMIT_MESSAGE" value=".idea" />
   </component>
@@ -435,38 +451,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="487" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590356856438" />
-    <state width="1345" height="223" key="GridCell.Tab.0.bottom" timestamp="1591655520282">
+    <state width="1345" height="223" key="GridCell.Tab.0.bottom" timestamp="1591655531759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591655520282" />
-    <state width="1345" height="223" key="GridCell.Tab.0.center" timestamp="1591655520281">
+    <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591655531759" />
+    <state width="1345" height="223" key="GridCell.Tab.0.center" timestamp="1591655531759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591655520281" />
-    <state width="1345" height="223" key="GridCell.Tab.0.left" timestamp="1591655520281">
+    <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591655531759" />
+    <state width="1345" height="223" key="GridCell.Tab.0.left" timestamp="1591655531758">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591655520281" />
-    <state width="1345" height="223" key="GridCell.Tab.0.right" timestamp="1591655520282">
+    <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591655531758" />
+    <state width="1345" height="223" key="GridCell.Tab.0.right" timestamp="1591655531759">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591655520282" />
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1591655520282">
+    <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591655531759" />
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1591655531555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591655520282" />
-    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1591655520282">
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591655531555" />
+    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1591655531555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591655520282" />
-    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1591655520282">
+    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591655531555" />
+    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1591655531555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591655520282" />
-    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1591655520282">
+    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591655531555" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1591655531555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591655520282" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591655531555" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1590854086692">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -497,7 +513,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/customCommand.py</url>
-          <line>160</line>
+          <line>164</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
