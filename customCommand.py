@@ -15,6 +15,8 @@ channel: str
 customCommandsData: dict
 # custom commands list
 commandList: dict
+# help string should be updated
+dirty: bool = False
 
 
 def init(c: twitch.Chat, ops: list, mods: list, chnnl: str):
@@ -97,6 +99,8 @@ def add( strdata: str ) -> None:
     commandList[name] = data  # create the command under the command name
     with open('./commands.json', 'w') as file:  # save all in the config file
         json.dump(commandList, file, indent=4)
+    global dirty
+    dirty = 'help' in data.keys()
     chat.send(f'command "{name}" successfully added')  # send success notice
 
 
