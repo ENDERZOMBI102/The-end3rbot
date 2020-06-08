@@ -3,7 +3,12 @@ import twitch
 import keyboard
 import requests as req
 
+# twitch chat
 chat: twitch.Chat
+# list of a channel operators
+operators: list
+# list of a channel moderators
+moderators: list
 
 
 customCommandsData = {}
@@ -24,10 +29,11 @@ commandList = {
 }
 
 
-def init(c: twitch.Chat):
-    chat = c
+def init(c: twitch.Chat, ops: list, mods: list):
+    global moderators, operators, chat, commandList
+    chat, operators, moderators = c, ops, mods  # put everything where it should be
     with open('./commands.json', 'r') as file:
-        commandList = json.load(file)
+        commandList = json.load(file)  # load command list
 
 
 def add( strdata: str ) -> None:
@@ -109,7 +115,7 @@ def add( strdata: str ) -> None:
 # this is the function that take care of command execution
 # TODO: order please!
 # TODO: add key pressing as action
-def execute( command: str, variable: str = None ):
+def execute( command: str, variable: str, msg: twitch.chat.Message):
     """
     :param command: command name to execute
     :param variable: command variable
@@ -125,6 +131,16 @@ def execute( command: str, variable: str = None ):
     """
     comDict: dict = commandList[command]
     del command
+    # first check of all: canBeUsedBy, cuz if the user can't execute it, why bother?
+    if 'canBeUsedBy' in comDict.keys():
+        validUser = comDict['canBeUsedBy']
+        if validUser is 'everyone':
+            pass
+        elif validUser is 'op':
+            if msg.sender in operators:
+
+
+
     # if the command should have a parameter and it doesn't, send an error
     # variable checks
     if 'needVar' in comDict.keys():  # check if the command needs a variable
