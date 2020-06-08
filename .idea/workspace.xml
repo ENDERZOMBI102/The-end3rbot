@@ -22,7 +22,6 @@
     <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccdocs.md" beforeDir="false" afterPath="$PROJECT_DIR$/ccdocs.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/customCommand.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -383,7 +382,35 @@
       <option name="project" value="LOCAL" />
       <updated>1591655636798</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042">
+      <created>1591656867702</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1591656867702</updated>
+    </task>
+    <task id="LOCAL-00043" summary="added help key">
+      <created>1591656876661</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1591656876661</updated>
+    </task>
+    <task id="LOCAL-00044" summary="added help key">
+      <created>1591656883224</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1591656883224</updated>
+    </task>
+    <task id="LOCAL-00045" summary=".idea">
+      <created>1591656888862</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1591656888862</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -399,8 +426,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed useless var" />
-    <MESSAGE value="finished command checking" />
     <MESSAGE value="command examples" />
     <MESSAGE value="bot version" />
     <MESSAGE value="typo in comment" />
@@ -423,6 +448,8 @@
     <MESSAGE value="corrected example.py" />
     <MESSAGE value="added sender" />
     <MESSAGE value="now it starts again, yay!" />
+    <MESSAGE value="added cmds command" />
+    <MESSAGE value="added help key" />
     <MESSAGE value=".idea" />
     <option name="LAST_COMMIT_MESSAGE" value=".idea" />
   </component>
@@ -491,10 +518,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590790085039" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591653810381">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591656890415">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591653810381" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591656890415" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590955127918">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -513,7 +540,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/customCommand.py</url>
-          <line>164</line>
+          <line>162</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
