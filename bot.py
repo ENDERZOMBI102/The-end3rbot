@@ -89,7 +89,8 @@ if __name__ == '__main__':
             json.dump(channels, file)
     operators = channels[channel]['operators']
     moderators = channels[channel]['moderators']
+    symbol = channels[channel]['symbol']
     del channels  # no useless data
-    customCommand.init(chat, operators, moderators)  # init custom commands module
+    customCommand.init(chat, operators, moderators, channel)  # init custom commands module
     print('ready!')
     chat.send('The end3rbot successfully connected')
