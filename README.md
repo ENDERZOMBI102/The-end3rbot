@@ -3,13 +3,17 @@ My personal twitch/discord bot
 
 features
 -
-- Advanced Custom Commands:
+- Advanced Custom Commands:<br>
   you can add commands directly from chat, with an "easy" json string.
-- Twitch-Discord Integration:
+- Twitch-Discord Integration:<br>
   send a command from discord to twitch and vice versa
-- Twitch-Discord role sync
+- Twitch-Discord role sync:<br>
   syncronize role between the two platforms!
-- Custom Command API:
+- Custom Command API:<br>
   create a command with python directly in chat!
-- Single-Multi user:
+- Single-Multi user:<br>
   multiple channel are suported, but due to limitations only one at time
+
+<br>
+
+[Custom Commands Docs](https://github.com/ENDERZOMBI102/The-end3rbot/blob/master/ccdocs.md)
