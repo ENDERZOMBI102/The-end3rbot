@@ -16,14 +16,17 @@ operators: list
 moderators: list
 chat: twitch.Chat = None
 comBaseDocs: list = \
-[
-    'addCommand: add a custom command',
-    'cmds: dispaly this message'
-]
+{
+    'addCommand': 'add a custom command',
+    'cmds': 'display this message',
+    'help': 'display the help string of the specified command',
+    'cs': 'change symbol for this channel, requires mod powers'
+}
 comDocs: list
 
 
 def handler(message: twitch.chat.Message):
+    global symbol
     # if the message doesn't start with SYMBOL is not a command
     if not message.text.startswith(symbol): return
     # remove the SYMBOL
@@ -44,22 +47,37 @@ def handler(message: twitch.chat.Message):
         customCommand.execute(command, variable, message.sender)
         return
     # not a custom command, use normal handler
-    elif command == 'pause' and os.getenv('CHANNEL') is '#enderzombi102':
-        if not timeout: # press esc!
-            asyncio.run( waitForTimeout() )
-            keyboard.press_and_release('esc')
-        else:
-            # timer is still running!
-            chat.send(f'can\' run that! wait {counter} seconds more!')
     elif command == 'addCommand':
         # add a custom command
         customCommand.add(variable)
-        updatehelp()
     elif command == 'cmds':
-        helpString: str
-        for doc in comDocs:
-            helpString += doc + "  "
-        chat.send(helpString)
+        chat.send('avaiable commands: help, ')
+    elif command == 'help':
+        if variable in ['', ' ']:
+            return
+        if variable in comBaseDocs.keys():
+            chat.send(comBaseDocs[variable])
+        elif variable in customCommand.commandList.keys():
+            chat.send(customCommand.commandList[variable])
+        else:
+            chat.send(f'command {command} not found')
+    elif command == 'cs':
+        if not ( message.sender in operators or moderators ):
+            return
+        elif len(variable) > 1:
+            chat.send('the symbol is max 1 character')
+            return
+        elif variable in ['', ' ']:
+            chat.send('symbol not valid')
+            return
+        else:
+            symbol = variable
+            with open('channels.json', 'r') as file:
+                channels = file.read()
+            channels[channel]['symbol'] = symbol
+            with open('channels.json', 'w') as file:
+                json.dump(channels, file)
+
 
 
 async def waitForTimeout():
@@ -75,16 +93,6 @@ async def count(seconds: int = 10):
         await asyncio.sleep(1)
         counter += 1
     counter = 0
-
-def updatehelp():
-    global comDocs
-    if customCommand.dirty is False:
-        return
-    comDocs = comBaseDocs
-    for cmd in customCommand.commandList:
-        if 'help' in cmd.keys():
-            comDocs.append(cmd['help'])
-    customCommand.dirty = False
 
 
 if __name__ == '__main__':

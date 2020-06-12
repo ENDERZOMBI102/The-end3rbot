@@ -94,13 +94,17 @@ def add( strdata: str ) -> None:
             if '{var}' in data['send']:
                 chat.send('no "{var}" in "send" value ('+data['send']+')')
                 return
+    if 'help' in data.keys():
+        dirty = True
+    if 'name' not in data.keys():
+        chat.send('you forgot the command name..')
+        return
     name = data['name']  # save the command name
     del data['name']  # delete the name key
+    chat.send(f'syntax validated! added command {name}')
     commandList[name] = data  # create the command under the command name
     with open('./commands.json', 'w') as file:  # save all in the config file
         json.dump(commandList, file, indent=4)
-    global dirty
-    dirty = 'help' in data.keys()
     chat.send(f'command "{name}" successfully added')  # send success notice
 
 
