@@ -1,12 +1,11 @@
 Custom Commands Docs
 -
 Custom Commands are a powerful feature of this bot, they can do almost anything, from
-sending a command to press a key on your keyboard.<br>
+sending text to press a key on your keyboard.<br>
 and they're simple as json! (hjson support coming soon)
 
 for a description of the terms used in this document see [dictionary](#dictionary)<br>
-order of execution:<br>
-command executed->canBeUsedBy checks->variable checks->data operations->paramReplace->press->send->stop
+to know the order of execution of the sections see [order of execution](#order-of-execution)<br>
 
 |section|value|parent|depends on|
 |-------|-----|------|----------|
@@ -178,5 +177,18 @@ mention: same as above<br>
 parameter: a string put after the command<br>
 variable: a saved value<br>
 command: a line of text that makes the bot doing something<br>
+
+order of execution
+-
+1) command recived
+2) pass custom commands to handler
+3) start cc execution
+4) canBeUsedBy checks
+5) variable checks
+6) data operations
+7) paramReplace
+8) press
+9) send text
+10) stop execution
 
 [go up](#Custom-Commands-Docs)
