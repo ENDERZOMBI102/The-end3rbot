@@ -5,20 +5,40 @@ import json
 import os
 import customCommand
 import typing
+from pathlib import Path
 import stdCommand
 
 
+def createDictFromTemplate(channel: str) -> dict:
+        channel = channel.lower()
+        if not '#' in channel:
+            channel = f'#{channel}'
+        return {
+            channel : {
+                'symbol' : '!',
+                'moderators' : [
+                    channel
+                ],
+                'operators'  : [
+                    channel
+                ],
+                'customCommands' : {
+
+                }
+            }
+        }
+
 class Channel:
 
-    symbol = '!'
+    symbol: str
     channel: str
     operators: list
     moderators: list
-    commandHandlers: list
+    commandHandlers: list = []
     customCommands: dict
     customCommandhandler: customCommand.customCommandsHandler
     stdCommandHandler: stdCommand.stdCommandsHandler
-    chat: twitch.Chat = None
+    chat: twitch.Chat
 
     def __init__(self, channel: str):
         self.channel = channel.lower()
@@ -27,12 +47,21 @@ class Channel:
             nickname=os.getenv('USERNAME'),
             oauth=os.getenv('OAUTH_TOKEN')
         )
-        with open('channels.json', 'r') as file:
-            channelData = json.load(file)[f'#{self.channel}']
+        if not Path('./channels.json').exists():
+            with open('channels.json', 'x') as file:
+                    json.dump( createDictFromTemplate(self.channel) )
+        else:
+            try:
+                with open('channels.json', 'r') as file:
+                    channelData = json.load(file)[f'#{self.channel}']
+            except Exception:
+                channelData = createDictFromTemplate(self.channel)[f'#{self.channel}']
+
         self.symbol = channelData['symbol']
         self.operators = channelData['operators']
         self.moderators = channelData['moderators']
         self.customCommands = channelData['customCommands']
+        self.stdCommandHandler = stdCommand.stdCommandsHandler(self)
         self.customCommandhandler = customCommand.customCommandsHandler()
         self.customCommandhandler.addChannelObj(self)
         self.customCommandhandler.channel = self.channel
@@ -94,14 +123,13 @@ class Channel:
 	# before deleting the object save all its data
     def __del__(self):
 		# read last data
-        with open('./channels.json', 'r') as file:
+        with os.open('./channels.json', 'r') as file:
             data: dict = json.load(file)
         data[f'#{self.channel}']['moderators'] = self.moderators
         data[f'#{self.channel}']['operators'] = self.operators
         data[f'#{self.channel}']['customCommands'] = self.customCommands
         data[f'#{self.channel}']['symbol'] = self.symbol
 		# write updated data
-        with open('./channels.json', 'w') as file:
+        with os.open('./channels.json', 'w') as file:
             json.dump(data, file, indent=4)
-
 
