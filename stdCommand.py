@@ -8,18 +8,34 @@ import typing
 
 class stdCommandsHandler:
     
-    commands: list = \
+    commands: dict = \
     {
         'addCommand': 'add a custom command',
         'cmds': 'display this message',
         'help': 'display the help string of the specified command',
         'cs': 'change symbol for this channel, requires mod powers'
     }
+    channel: str
+    chat: twitch.Chat
+
+    def __init__(self, channel: object):
+        self.channel = channel.channel
+        self.chat = channel.chat
+        import Channel
+        self.channelObj: Channel.Channel = channel
 
 
-    def __init__(self):
-        pass
-
+    async def help(self, variable: str, sender: str):
+        if variable in self.commands.keys():
+            self.chat.send(self.commands[variable])
+        elif variable in self.channelObj.customCommands.keys():
+            try:
+                msg: str = self.channelObj.customCommands[variable]['help']
+            except Exception:
+                chat.send("this command don't have a help string")
+            else:
+                self.chat.send()
+        
 
 # TODO: implement old commands (those ones)
 """
@@ -33,15 +49,6 @@ def handler(message: twitch.chat.Message):
         customCommand.add(variable)
     elif command == 'cmds':
         chat.send('avaiable commands: help, ')
-    elif command == 'help':
-        if variable in ['', ' ']:
-            return
-        if variable in comBaseDocs.keys():
-            chat.send(comBaseDocs[variable])
-        elif variable in customCommand.commandList.keys():
-            chat.send(customCommand.commandList[variable])
-        else:
-            chat.send(f'command {command} not found')
     elif command == 'cs':
         if not ( message.sender in operators or moderators ):
             return
