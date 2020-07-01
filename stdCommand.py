@@ -36,19 +36,33 @@ class stdCommandsHandler:
             else:
                 self.chat.send()
         
+    async def addCommand(self, variable: str, sender: str):
+        # check if sender is mod
+        if not ( sender in self.channelObj.operators or self.channelObj.moderators ):
+            self.chat.send("you're not a mod!")
+            return  # its not, return
+        # add a custom command
+        customCommand.add(variable)
+
+    async def cmds(self, variable: str, sender: str):
+        self.chat.send(f'avaiable commands: addCommand, cmds, help, cs')
+    
+    async def cs(self, variable: str, sender: str):
+        if not ( sender in self.channelObj.operators or self.channelObj.moderators ):
+            return
+        variable = variable.strip()
+        if len(variable) > 1:
+            self.chat.send('the symbol is max 1 character')
+            return
+        elif variable in ['', ' ']:
+            self.chat.send('symbol not valid')
+            return
+        else:
+            self.channelObj.symbol = variable
 
 # TODO: implement old commands (those ones)
 """
 def handler(message: twitch.chat.Message):
-    elif command == 'addCommand':
-        # check if sender is mod
-        if not ( message.sender in operators or moderators ):
-            chat.send("you're not a mod!")
-            return  # its not, return
-        # add a custom command
-        customCommand.add(variable)
-    elif command == 'cmds':
-        chat.send('avaiable commands: help, ')
     elif command == 'cs':
         if not ( message.sender in operators or moderators ):
             return
