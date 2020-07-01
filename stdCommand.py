@@ -59,24 +59,3 @@ class stdCommandsHandler:
             return
         else:
             self.channelObj.symbol = variable
-
-# TODO: implement old commands (those ones)
-"""
-def handler(message: twitch.chat.Message):
-    elif command == 'cs':
-        if not ( message.sender in operators or moderators ):
-            return
-        elif len(variable) > 1:
-            chat.send('the symbol is max 1 character')
-            return
-        elif variable in ['', ' ']:
-            chat.send('symbol not valid')
-            return
-        else:
-            symbol = variable
-            with open('channels.json', 'r') as file:
-                channels = file.read()
-            channels[channel]['symbol'] = symbol
-            with open('channels.json', 'w') as file:
-                json.dump(channels, file)
-"""
