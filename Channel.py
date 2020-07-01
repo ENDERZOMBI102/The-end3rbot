@@ -96,8 +96,16 @@ class Channel:
         # if the stdCommandHandler has this method, you that method
         if hasattr( self.stdCommandHandler, command ):
             # its kinda a mess, but it should do the work
-            #				stdCommandHandler		get cmd method			execute with parameters
-            asyncio.run( self.stdCommandHandler.__getattribute__(command)( variable, message.sender ) )
+            #				        stdCommandHandler	get method			execute with parameters
+            asyncio.run( 
+                getattr( 
+                    self.stdCommandHandler,  # object to retrive the method from
+                    command  # method name
+                )(  # calls the method with those as parameter
+                    variable, 
+                    message.sender 
+                )
+            )  # run the async method 
 		# else if is a custom command
         elif isCustom is True:
 			# execute with custom commands parser
