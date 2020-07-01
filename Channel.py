@@ -54,11 +54,16 @@ class Channel:
             with open('channels.json', 'x') as file:
                     json.dump( createDictFromTemplate(self.channel) )
         else:
+            data: dict = None
             try:
                 with open('channels.json', 'r') as file:
-                    channelData = json.load(file)[f'#{self.channel}']
+                    data = json.load(file)
+                    channelData = data[f'#{self.channel}']
             except Exception:
                 channelData = createDictFromTemplate(self.channel)[f'#{self.channel}']
+                data[f'#{self.channel}'] = channelData
+                with open('channels.json', 'w') as file:
+                    json.dump(data, file, indent=4)
 
         self.symbol = channelData['symbol']
         self.operators = channelData['operators']
@@ -70,6 +75,8 @@ class Channel:
         self.customCommandhandler.channel = self.channel
         self.customCommandhandler.chat = self.chat
         self.chat.subscribe(self.preCommandHandler)
+        self.chat.send('The end3rbot successfully connected')
+        self.log('ready')
 
     # handler is a function that recives a message object
     def onMessage(self, handler) -> None:
@@ -94,7 +101,7 @@ class Channel:
         hasPing = '@' in str(variable)
         # is a custom command?
         isCustom = command in self.customCommands
-        # print command infos
+        # log command infos
         self.log(f'command: {command}, variable: {variable}, has ping: {hasPing}, is custom: {isCustom}')
         # if the stdCommandHandler has this method, you that method
         if hasattr( self.stdCommandHandler, command ):
@@ -134,13 +141,14 @@ class Channel:
 	# before deleting the object save all its data
     def __del__(self):
 		# read last data
-        with os.open('./channels.json', 'r') as file:
+        with os.open('./channels.json', mode='r') as file:
             data: dict = json.load(file)
+        # update data
         data[f'#{self.channel}']['moderators'] = self.moderators
         data[f'#{self.channel}']['operators'] = self.operators
         data[f'#{self.channel}']['customCommands'] = self.customCommands
         data[f'#{self.channel}']['symbol'] = self.symbol
 		# write updated data
-        with os.open('./channels.json', 'w') as file:
+        with os.open('./channels.json', mode='w') as file:
             json.dump(data, file, indent=4)
 

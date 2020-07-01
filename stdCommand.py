@@ -43,10 +43,10 @@ class stdCommandsHandler:
     async def addCommand(self, variable: str, sender: str):
         # check if sender is mod
         if not ( sender in self.channelObj.operators or self.channelObj.moderators ):
-            self.chat.send("you're not a mod!")
+            await self.chat.send("you're not a mod!")
             return  # its not, return
         # add a custom command
-        customCommand.add(variable)
+        await self.channelObj.customCommandhandler.add(variable)
 
     async def cmds(self, variable: str, sender: str):
         self.chat.send(f'avaiable commands: addCommand, cmds, help, cs')
@@ -63,6 +63,18 @@ class stdCommandsHandler:
             return
         else:
             self.channelObj.symbol = variable
+
+    async def save(self, variable, sender):
+		# read last data
+        with open('./channels.json', 'r') as file:
+            data: dict = json.load(file)
+        data[f'#{self.channel}']['moderators'] = self.channelObj.moderators
+        data[f'#{self.channel}']['operators'] = self.channelObj.operators
+        data[f'#{self.channel}']['customCommands'] = self.channelObj.customCommands
+        data[f'#{self.channel}']['symbol'] = self.channelObj.symbol
+		# write updated data
+        with open('./channels.json', 'w') as file:
+            json.dump(data, file, indent=4)
 
     #if os.getenv('GITPOD_GIT_USER_EMAIL') is None:
     #    async def press(self, variable: str, sender: str):
