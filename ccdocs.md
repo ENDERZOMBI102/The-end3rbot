@@ -31,8 +31,12 @@ example:
   "send": "this is text"
 }
 ```
-this section holds the text that the command will send,
-it can have text substitution with {} and data actions
+this section holds the text that the command will send, it can have text substitution with {} and data actions<br>
+avaiable substitutions:
+ - {sender} replace with sender username
+ - {para} replace with parameter
+ - {var} see [load](#load)
+ 
 
 press
 -
@@ -65,17 +69,6 @@ example:
 ```
 this makes the command _require_ a parameter when called, useful when you don't want the
 command called without a parameter
-
-paramReplace
--
-example:
-```json
-{
-  "send": "parameter: {0}", 
-  "paramReplace": "{0}" 
-}
-```
-this replaces the given text ({0} in this case) with the parameter one's<br>
 
 canBeUsedBy
 -
@@ -185,8 +178,8 @@ order of execution
 3) start cc execution
 4) canBeUsedBy checks
 5) variable checks
-6) data operations
-7) paramReplace
+6) send replaces
+7) data operations
 8) press
 9) send text
 10) stop execution
