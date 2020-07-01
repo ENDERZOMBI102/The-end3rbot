@@ -7,6 +7,9 @@ import customCommand
 import typing
 from pathlib import Path
 import stdCommand
+import dotenv
+
+dotenv.load_dotenv()
 
 
 def createDictFromTemplate(channel: str) -> dict:

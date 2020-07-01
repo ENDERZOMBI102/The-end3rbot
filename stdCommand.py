@@ -24,6 +24,10 @@ class stdCommandsHandler:
         import Channel
         self.channelObj: Channel.Channel = channel
 
+    # commands declarations have this syntax:
+    # async def COMMANDNAME (self, variable: str, sender: str )
+    # where variable is the command parameter (if there's onne) and is of type str
+    # where sender is the username of the user that issued the command and is of type str
 
     async def help(self, variable: str, sender: str):
         if variable in self.commands.keys():
@@ -59,3 +63,7 @@ class stdCommandsHandler:
             return
         else:
             self.channelObj.symbol = variable
+
+    #if os.getenv('GITPOD_GIT_USER_EMAIL') is None:
+    #    async def press(self, variable: str, sender: str):
+    #        keyboard.press_and_release(variable)
