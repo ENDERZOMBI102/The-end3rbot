@@ -64,7 +64,10 @@ class stdCommandsHandler:
         else:
             self.channelObj.symbol = variable
 
-    async def save(self, variable, sender):
+    async def saveChannelData(self, variable: str, sender: str):
+        if not self.channelObj.isop(sender):
+            self.chat.send('To perform this action op permissions are required')
+            return
 		# read last data
         with open('./channels.json', 'r') as file:
             data: dict = json.load(file)
@@ -76,6 +79,45 @@ class stdCommandsHandler:
         with open('./channels.json', 'w') as file:
             json.dump(data, file, indent=4)
 
-    #if os.getenv('GITPOD_GIT_USER_EMAIL') is None:
-    #    async def press(self, variable: str, sender: str):
-    #        keyboard.press_and_release(variable)
+    async def sendChannelData(self, variable: str, sender: str):
+        if not self.channelObj.ismod(sender):
+            self.chat.send('To perform this action mod permissions are required')
+            return
+        self.chat.send(
+            f'infos for {self.channel}, \
+            symbol: {self.channelObj.symbol}, \
+            mods: {self.channelObj.moderators}, \
+            ops: {self.channelObj.operators}, \
+            has other bots: {self.channelObj.hasOtherBots}, \
+            custom commands: {str(self.channelObj.customCommands.keys()).replace("dict_keys", "")}'
+        )
+
+    async def evalPi(self, variable: str, sender: str):
+        if self.channelObj.isop(sender):
+            eval(variable)
+
+    async def mod(self, variable: str, sender: str):
+		if self.channelObj.ismod(sender):
+			self.channelObj.moderators.append(variable)
+			self.channelObj.log(f'now {variable} is a moderator')
+			self.chat.send(f'now {variable} is a moderator')
+
+    async def demod(self, variable: str, sender: str):
+        if self.channelObj.ismod(sender): 
+            self.channelObj.operators.remove(variable)
+            self.channelObj.log(f'now {variable} is no longer a moderator')
+            self.chat.send(f'now {variable} is no longer a moderator')
+
+    async def op(self, variable: str, sender: str):
+        if self.channelObj.isop(sender): 
+            self.channelObj.operators.append(variable)
+            self.channelObj.log(f'now {variable} is an operator')
+            self.chat.send(f'now {variable} is an operator')
+
+    async def deop(self, variable: str, sender: str):
+        if self.channelObj.isop(sender): 
+            self.channelObj.operators.remove(variable)
+            self.channelObj.log(f'now {variable} is no longer an operator')
+            self.chat.send(f'now {variable} is no longer an operator')
+
+    
