@@ -173,15 +173,18 @@ command: a line of text that makes the bot doing something<br>
 
 order of execution
 -
-1) command recived
-2) pass custom commands to handler
-3) start cc execution
-4) canBeUsedBy checks
-5) variable checks
-6) send replaces
-7) data operations
-8) press
-9) send text
-10) stop execution
+1) message recived
+2) check if message starts with SYMBOL
+3) check if command exists
+4) command found in the channel's custom commands
+5) pass custom commands to handler
+6) start cc execution
+7) canBeUsedBy checks
+8) variable checks
+9) send replaces
+10) data operations
+11) press
+12) send text
+13) stop execution
 
 [go up](#Custom-Commands-Docs)
