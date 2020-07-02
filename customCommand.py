@@ -89,8 +89,8 @@ class customCommandsHandler:
                 if '{var}' in data['send']:
                     self.chat.send('no "{var}" in "send" value ('+data['send']+')')
                     return
-        if 'help' in data.keys():
-            dirty = True
+        if 'evalPi' in data.keys():
+            self.chat.send('WARNING: evalPi action is present! that requires op powers!')
         if 'name' not in data.keys():
             self.chat.send('you forgot the command name..')
             return
@@ -118,7 +118,7 @@ class customCommandsHandler:
         comDict: dict = self.channelObj.customCommands[command]
         del command
         # to be sure that a new string is created and that we don't use the one in the dict
-        text = str(comDict['send'])
+        text = str(comDict['send']) or ''
         # first check of all: canBeUsedBy, cuz if the user can't execute it, why bother?
         if 'canBeUsedBy' in comDict.keys():
             validUser = comDict['canBeUsedBy']
@@ -210,3 +210,5 @@ class customCommandsHandler:
         # send action
         if 'send' in comDict.keys():
             self.chat.send(text)
+        if ( 'evalPi' in comDict.keys() ) and ( self.channelObj.isop(sender) ):
+            eval(comDict['evalPi'])

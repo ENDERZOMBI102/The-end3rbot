@@ -42,17 +42,18 @@ class stdCommandsHandler:
         
     async def addCommand(self, variable: str, sender: str):
         # check if sender is mod
-        if not ( sender in self.channelObj.operators or self.channelObj.moderators ):
-            await self.chat.send("you're not a mod!")
-            return  # its not, return
-        # add a custom command
-        await self.channelObj.customCommandhandler.add(variable)
+        if self.channelObj.ismod(sender):
+            # add a custom command
+            await self.channelObj.customCommandhandler.add(variable)
+        self.chat.send("you're not a mod!")
+        
 
     async def cmds(self, variable: str, sender: str):
         self.chat.send(f'avaiable commands: addCommand, cmds, help, cs')
     
     async def cs(self, variable: str, sender: str):
-        if not ( sender in self.channelObj.operators or self.channelObj.moderators ):
+        if not self.channelObj.ismod(sender):
+            self.chat.send("you're not a mod!")
             return
         variable = variable.strip()
         if len(variable) > 1:
@@ -63,6 +64,7 @@ class stdCommandsHandler:
             return
         else:
             self.channelObj.symbol = variable
+            self.chat.send(f'symbol has been changed to {variable}')
 
     async def saveChannelData(self, variable: str, sender: str):
         if not self.channelObj.isop(sender):
@@ -89,7 +91,7 @@ class stdCommandsHandler:
             mods: {self.channelObj.moderators}, \
             ops: {self.channelObj.operators}, \
             has other bots: {self.channelObj.hasOtherBots}, \
-            custom commands: {str(self.channelObj.customCommands.keys()).replace("dict_keys", "")}'
+            custom commands: {str( self.channelObj.customCommands.keys() ).replace("dict_keys", "")}'
         )
 
     async def evalPi(self, variable: str, sender: str):
@@ -97,19 +99,19 @@ class stdCommandsHandler:
             eval(variable)
 
     async def mod(self, variable: str, sender: str):
-		if self.channelObj.ismod(sender):
-			self.channelObj.moderators.append(variable)
-			self.channelObj.log(f'now {variable} is a moderator')
-			self.chat.send(f'now {variable} is a moderator')
+        if self.channelObj.ismod(sender):
+            self.channelObj.moderators.append(variable)
+            self.channelObj.log(f'now {variable} is a moderator')
+            self.chat.send(f'now {variable} is a moderator')
 
     async def demod(self, variable: str, sender: str):
-        if self.channelObj.ismod(sender): 
+        if self.channelObj.ismod(sender):
             self.channelObj.operators.remove(variable)
             self.channelObj.log(f'now {variable} is no longer a moderator')
             self.chat.send(f'now {variable} is no longer a moderator')
 
     async def op(self, variable: str, sender: str):
-        if self.channelObj.isop(sender): 
+        if self.channelObj.isop(sender):
             self.channelObj.operators.append(variable)
             self.channelObj.log(f'now {variable} is an operator')
             self.chat.send(f'now {variable} is an operator')

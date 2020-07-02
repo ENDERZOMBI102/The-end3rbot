@@ -99,7 +99,7 @@ class Channel:
         try:
             command, variable = text.split(' ', 1)
         except:
-            command, variable = text, None
+            command, variable = text, ''
         # if there's a @ has a mentions
         hasPing = '@' in str(variable)
         # is a custom command?
@@ -138,35 +138,35 @@ class Channel:
                     self.log(f'error! {e}')
                     continue
                 else:
+                    #command was ipotetically handled
                     handled = True
-            if not handled is True:
+            if not ( handled is True ) or ( self.hasOtherBots is True ):
                 self.log(f'unknown command: {command}')
                 self.chat.send(f'unknown command: {command}')
 	# a small function that "pretty prints" messages
-    def log(self, txt: str) -> None:
+    def log(self, txt: str):
         print(f'{self.channel} - {txt}')
 
     # return true if user is op
-    def isop(self, user: str) -> bool:
+    def isop(self, user: str):
         return user in self.operators
 
     # return true if user is op
-    def ismod(self, user: str) -> bool:
+    def ismod(self, user: str):
         return user in self.moderators or self.operators
 
 	# before deleting the object save all its data
     def __del__(self):
-		# read last data
-        db = Path('./channels.json')
-        with db.open( mode='r' ) as file:
+		# mode '+' makes so we can read and write
+        with open( './channels.json', mode='+' ) as file:
+            # read last data
             data: dict = json.load(file)
-        # update data
-        data[f'#{self.channel}']['moderators'] = self.moderators
-        data[f'#{self.channel}']['operators'] = self.operators
-        data[f'#{self.channel}']['customCommands'] = self.customCommands
-        data[f'#{self.channel}']['hasOtherBots'] = self.hasOtherBots
-        data[f'#{self.channel}']['symbol'] = self.symbol
-		# write updated data
-        with db.open( mode='w' ) as file:
+            # update data
+            data[f'#{self.channel}']['moderators'] = self.moderators
+            data[f'#{self.channel}']['operators'] = self.operators
+            data[f'#{self.channel}']['customCommands'] = self.customCommands
+            data[f'#{self.channel}']['hasOtherBots'] = self.hasOtherBots
+            data[f'#{self.channel}']['symbol'] = self.symbol
+            # write updated data
             json.dump(data, file, indent=4)
 
