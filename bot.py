@@ -1,6 +1,7 @@
-import dotenv
 import Channel
 
+class bot:
+    pass
+
 if __name__ == '__main__':
-    dotenv.load_dotenv()
     cn = Channel.Channel('ENDERZOMBI102')
