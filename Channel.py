@@ -19,6 +19,7 @@ def createDictFromTemplate(channel: str) -> dict:
         return {
             channel : {
                 'symbol' : '!',
+                'hasOtherBots' : False,
                 'moderators' : [
                     channel
                 ],
@@ -41,6 +42,7 @@ class Channel:
     customCommands: dict
     customCommandhandler: customCommand.customCommandsHandler
     stdCommandHandler: stdCommand.stdCommandsHandler
+    hasOtherBots: bool
     chat: twitch.Chat
 
     def __init__(self, channel: str):
@@ -68,6 +70,7 @@ class Channel:
         self.symbol = channelData['symbol']
         self.operators = channelData['operators']
         self.moderators = channelData['moderators']
+        self.hasOtherBots = channelData['hasOtherBots']
         self.customCommands = channelData['customCommands']
         self.stdCommandHandler = stdCommand.stdCommandsHandler(self)
         self.customCommandhandler = customCommand.customCommandsHandler()
@@ -123,6 +126,7 @@ class Channel:
             asyncio.run( self.customCommandhandler.execute( command, variable, message.sender ) )
 		# if nothing worked, send the command to the registered "other" handlers
         else:
+            handled: bool = False
 			# cicle in all registered handlers
             for handler in self.commandHandlers:
 				# try to execute them
@@ -133,22 +137,36 @@ class Channel:
 					# log the error
                     self.log(f'error! {e}')
                     continue
-	
+                else:
+                    handled = True
+            if not handled is True:
+                self.log(f'unknown command: {command}')
+                self.chat.send(f'unknown command: {command}')
 	# a small function that "pretty prints" messages
     def log(self, txt: str) -> None:
         print(f'{self.channel} - {txt}')
 
+    # return true if user is op
+    def isop(self, user: str) -> bool:
+        return user in self.operators
+
+    # return true if user is op
+    def ismod(self, user: str) -> bool:
+        return user in self.moderators or self.operators
+
 	# before deleting the object save all its data
     def __del__(self):
 		# read last data
-        with os.open('./channels.json', mode='r') as file:
+        db = Path('./channels.json')
+        with db.open( mode='r' ) as file:
             data: dict = json.load(file)
         # update data
         data[f'#{self.channel}']['moderators'] = self.moderators
         data[f'#{self.channel}']['operators'] = self.operators
         data[f'#{self.channel}']['customCommands'] = self.customCommands
+        data[f'#{self.channel}']['hasOtherBots'] = self.hasOtherBots
         data[f'#{self.channel}']['symbol'] = self.symbol
 		# write updated data
-        with os.open('./channels.json', mode='w') as file:
+        with db.open( mode='w' ) as file:
             json.dump(data, file, indent=4)
 
