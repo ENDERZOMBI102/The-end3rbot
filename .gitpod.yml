@@ -1,3 +1,6 @@
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+image: 
+  file: .gitpod.Dockerfile
+
 tasks:
     - command: source /workspace/The-end3rbot/.venv/bin/activate && clear

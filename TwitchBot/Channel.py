@@ -3,10 +3,10 @@ import keyboard
 import asyncio
 import json
 import os
-import customCommand
+import TwitchBot.customCommand as customCommand
 import typing
 from pathlib import Path
-import stdCommand
+import TwitchBot.stdCommand as stdCommand
 import dotenv
 
 dotenv.load_dotenv()
@@ -14,14 +14,14 @@ dotenv.load_dotenv()
 
 def createDictFromTemplate(channel: str) -> dict:
         channel = channel.lower()
-        if not '#' in channel:
-            channel = f'#{channel}'
+        if '#' in channel:
+            channel = channel.replace('#','')
         return {
-            channel : {
+            f'#{channel}' : {
                 'symbol' : '!',
                 'hasOtherBots' : False,
                 'moderators' : [
-                    channel
+                    
                 ],
                 'operators'  : [
                     channel
@@ -105,7 +105,7 @@ class Channel:
         # is a custom command?
         isCustom = command in self.customCommands
         # log command infos
-        self.log(f'command: {command}, variable: {variable}, has ping: {hasPing}, is custom: {isCustom}')
+        self.log(f'command: {command}, variable: {variable}, has ping: {hasPing}, is custom: {isCustom}, sender: {message.sender}')
         # if the stdCommandHandler has this method, you that method
         if hasattr( self.stdCommandHandler, command ):
             # its kinda a mess, but it should do the work
@@ -149,11 +149,21 @@ class Channel:
 
     # return true if user is op
     def isop(self, user: str):
-        return user in self.operators
+        try:
+            self.operators.index(user)
+        except ValueError:
+            return False
+        else:
+            return True
 
     # return true if user is op
     def ismod(self, user: str):
-        return user in self.moderators or self.operators
+        try:
+            self.operators.index(user)
+        except ValueError:
+            return False or self.isop(user)
+        else:
+            return True
 
 	# before deleting the object save all its data
     def __del__(self):

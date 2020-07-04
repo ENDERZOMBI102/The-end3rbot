@@ -17,7 +17,7 @@ class customCommandsHandler:
         pass
 
     def addChannelObj( self, channelObj ) -> None:
-        import Channel
+        import TwitchBot.Channel as Channel
         # channel object
         self.channelObj: Channel.Channel = channelObj
 
