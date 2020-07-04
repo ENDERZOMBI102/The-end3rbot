@@ -4,3 +4,4 @@ commands.json
 channels.json
 __pycache__
 .venv
+Pipfile.lock

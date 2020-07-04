@@ -9,6 +9,7 @@ verify_ssl = true
 twitch-python = "*"
 keyboard = "*"
 python-dotenv = "*"
+"discord.py" = {extras = ["voice"], version = "*"}
 
 [requires]
 python_version = "3.8"

@@ -7,9 +7,6 @@ import TwitchBot.customCommand as customCommand
 import typing
 from pathlib import Path
 import TwitchBot.stdCommand as stdCommand
-import dotenv
-
-dotenv.load_dotenv()
 
 
 def createDictFromTemplate(channel: str) -> dict:
@@ -49,8 +46,8 @@ class Channel:
         self.channel = channel.lower()
         self.chat = twitch.Chat(
             channel=self.channel,
-            nickname=os.getenv('USERNAME'),
-            oauth=os.getenv('OAUTH_TOKEN')
+            nickname=os.getenv('TWITCH_USERNAME'),
+            oauth=os.getenv('TWITCH_OAUTH_TOKEN')
         )
         if not Path('./channels.json').exists():
             with open('channels.json', 'x') as file:
@@ -168,7 +165,7 @@ class Channel:
 	# before deleting the object save all its data
     def __del__(self):
 		# mode '+' makes so we can read and write
-        with open( './channels.json', mode='+' ) as file:
+        with open( './channels.json', mode='r+' ) as file:
             # read last data
             data: dict = json.load(file)
             # update data

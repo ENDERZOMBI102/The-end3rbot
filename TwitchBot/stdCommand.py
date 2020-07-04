@@ -37,7 +37,9 @@ class stdCommandsHandler:
     # where sender is the username of the user that issued the command and is of type str
 
     async def help(self, variable: str, sender: str):
-        if variable in self.commands.keys():
+        if variable == '':
+            self.chat.send("ERROR: parameter can't be empty")
+        elif variable in self.commands.keys():
             self.chat.send(self.commands[variable])
         elif variable in self.channelObj.customCommands.keys():
             try:
@@ -52,6 +54,10 @@ class stdCommandsHandler:
         if self.channelObj.ismod(sender):
             # add a custom command
             await self.channelObj.customCommandhandler.add(variable)
+            with open('./channels.json', 'r+') as file:
+                data = json.load(file)
+                data[f'#{self.channel}']['customCommand'] = self.channelObj.customCommands
+                json.dump(data, file, indent=4)
         else:
             self.chat.send('To perform this action mod permissions are required')
         
