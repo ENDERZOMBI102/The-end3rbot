@@ -79,11 +79,11 @@ class Channel:
         self.log('ready')
 
     # handler is a function that recives a message object
-    def onMessage(self, handler) -> None:
+    def onMessage(self, handler: typing.Callable) -> None:
         self.chat.subscribe(handler)
     
     # handler is a function that recives 3 str, command, variable, sender
-    def onCommand(self, handler) -> None:
+    def onCommand(self, handler: typing.Callable) -> None:
         self.commandHandlers.append(handler)
 
     # preprocess the message before executing the handlers/callbacks
