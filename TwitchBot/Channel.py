@@ -156,7 +156,7 @@ class Channel:
     # return true if user is op
     def ismod(self, user: str):
         try:
-            self.operators.index(user)
+            self.moderators.index(user)
         except ValueError:
             return False or self.isop(user)
         else:

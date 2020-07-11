@@ -21,6 +21,7 @@ class stdCommandsHandler:
         'demod':'makes the given user no loger an mod, requires mod powers',
         'op':'makes the given user an op, requires op powers',
         'deop':'makes the given user no loger an op, requires op powers',
+        'echo':'echo echo echo',
     }
     channel: str
     chat: twitch.Chat
@@ -51,7 +52,7 @@ class stdCommandsHandler:
         
     async def addCommand(self, variable: str, sender: str):
         # check if sender is mod
-        if self.channelObj.ismod(sender):
+        if self.channelObj.ismod(sender) is True:
             # add a custom command
             await self.channelObj.customCommandhandler.add(variable)
             with open('./channels.json', 'r+') as file:
@@ -149,4 +150,13 @@ class stdCommandsHandler:
         else:
             self.chat.send('To perform this action op permissions are required')
 
+    async def echo(self, variable: str,sender: str):
+        if variable == '':
+            self.chat.send('This command requires a variable')
+            return
+        elif ( variable.startswith('!') ) and ( not variable.startswith('!echo') ):
+            return
+        else:
+            self.chat.send(variable)
+            return
     
