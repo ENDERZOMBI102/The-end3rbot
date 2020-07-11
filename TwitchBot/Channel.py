@@ -165,7 +165,7 @@ class Channel:
 	# before deleting the object save all its data
     def __del__(self):
 		# mode '+' makes so we can read and write
-        with open( './channels.json', mode='r+' ) as file:
+        with open( './channels.json', mode='r' ) as file:
             # read last data
             data: dict = json.load(file)
             # update data
@@ -174,6 +174,7 @@ class Channel:
             data[f'#{self.channel}']['customCommands'] = self.customCommands
             data[f'#{self.channel}']['hasOtherBots'] = self.hasOtherBots
             data[f'#{self.channel}']['symbol'] = self.symbol
+        with open('./channels.json', 'w') as file:
             # write updated data
             json.dump(data, file, indent=4)
 

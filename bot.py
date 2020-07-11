@@ -9,6 +9,7 @@ if __name__ == '__main__':
     #discordClient.run()
     cn0 = TwitchBot.Channel('ENDERZOMBI102')
     cn1 = TwitchBot.Channel('AllSoTuff')
+    cn2 = TwitchBot.Channel('baguettery')
     """while True:
         try:
             print( eval( input('The_end3rbot>') ) )
