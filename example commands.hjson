@@ -5,7 +5,6 @@
         "press": "",
         "varIsPing": true,
         "needVar": true,
-        "paramReplace": "",
         "canBeUsedBy": "", // everyone, op, mod, streamer
         "data": {
             "url": "",
@@ -24,8 +23,7 @@
     },
     // this is an example implementing a "whats the latest version of" command
     "lastversion" : {
-        "send": "latest version of {0} is: {}",
-        "paramReplace" : "{0}",
+        "send": "latest version of {para} is: {}",
         "needVar" : true,
         "data": {
             "urljson": "paramVar",
