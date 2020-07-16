@@ -164,6 +164,9 @@ class Channel:
 
 	# before deleting the object save all its data
     def __del__(self):
+        # close chat
+        self.chat.irc.leave_channel(self.channel)
+        del self.chat
 		# mode '+' makes so we can read and write
         with open( './channels.json', mode='r' ) as file:
             # read last data
