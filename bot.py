@@ -6,8 +6,8 @@ from typing import List
 dotenv.load_dotenv()
 
 if __name__ == '__main__':
-    #discordClient = DiscordBot.Client()
-    #discordClient.run()
+    # discordClient = DiscordBot.Client()
+    # discordClient.run()
     botInstances: List[TwitchBot.Channel] = [
         TwitchBot.Channel('ENDERZOMBI102'),
         TwitchBot.Channel('AllSoTuff'),

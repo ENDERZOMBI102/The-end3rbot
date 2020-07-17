@@ -131,7 +131,7 @@ class customCommandsHandler:
                 if sender not in self.channelObj.moderators:
                     return
             elif validUser == 'streamer':   # can be used by streamer
-                if not sender.lower() == channel.lower().replace('#', ''):
+                if not sender.lower() == self.channel.lower().replace('#', ''):
                     return
             else:
                 self.chat.send(f'ERROR: unknown "canBeUsedBy" value {validUser}')
