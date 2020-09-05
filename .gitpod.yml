@@ -2,7 +2,8 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-    - command: source /workspace/The-end3rbot/.venv/bin/activate && clear
+  - init: pipenv sync
+    command: source /workspace/The-end3rbot/.venv/bin/activate && clear
 
 vscode:
   extensions:
