@@ -10,6 +10,7 @@ twitch-python = "*"
 keyboard = "*"
 python-dotenv = "*"
 "discord.py" = {extras = ["voice"], version = "*"}
+twitchio = "*"
 
 [requires]
 python_version = "3.8"
