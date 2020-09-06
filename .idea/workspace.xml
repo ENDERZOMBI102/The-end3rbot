@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Flavia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Flavia.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitchBot/Channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/TwitchBot/Channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitchBot/customCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/TwitchBot/customCommand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitchBot/stdCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/TwitchBot/stdCommand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
-    </list>
+    <list default="true" id="9a2cc43c-9a9a-4166-96bc-4284b7e07548" name="Default Changelist" comment="initial commit x2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,13 +91,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590354453384</updated>
-    </task>
-    <task id="LOCAL-00001" summary="initial commit x2">
-      <created>1590355534443</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1590355534443</updated>
     </task>
     <task id="LOCAL-00002" summary="initial commit x2">
       <created>1590357705611</created>
@@ -442,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595010650643</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="things">
+      <created>1599391397059</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1599391397061</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -458,7 +451,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="more comments" />
     <MESSAGE value="i ping u" />
     <MESSAGE value="added ooe" />
     <MESSAGE value="idr" />
@@ -483,7 +475,8 @@
     <MESSAGE value=".idea" />
     <MESSAGE value="everything" />
     <MESSAGE value="TUFF" />
-    <option name="LAST_COMMIT_MESSAGE" value="TUFF" />
+    <MESSAGE value="things" />
+    <option name="LAST_COMMIT_MESSAGE" value="things" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1594318079388">
@@ -546,10 +539,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590790085039" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1595010686705">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1599391404885">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1595010686705" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599391404885" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595010500323">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
