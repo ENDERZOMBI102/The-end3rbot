@@ -1,21 +1,20 @@
-import sys
-if '--twitchv2' in sys.argv:
-    import TwitchBotV2 as TwitchBot
-else:
-    import TwitchBot
+import TwitchBotV2 as TwitchBot
 import DiscordBot
 import twitch.chat.message
 import dotenv
+import json
+from pathlib import Path
 from typing import List
 
 dotenv.load_dotenv()
 
-# discordClient = DiscordBot.Client()
-# discordClient.run()
-botInstances: List[TwitchBot.Channel] = [
-    #TwitchBot.Channel('ENDERZOMBI102'),
-    TwitchBot.Channel('AllSoTuff'),
-]
+
+path = Path('./channels.json')
+if not path.exist():
+    
+
+
+
 while True:
     inp = tuple( input('The_end3rbot> ').split(' ', 1) )
     try:
