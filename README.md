@@ -11,8 +11,8 @@ features
   syncronize role between the two platforms!
 - Custom Command API:<br>
   create a command with python directly in chat!
-- Single-Multi user:<br>
-  multiple channel are suported, but due to limitations only one at time
+- Multi user:<br>
+  multiple channel are supported
 
 <br>
 

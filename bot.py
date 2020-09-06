@@ -1,4 +1,8 @@
-import TwitchBot
+import sys
+if '--twitchv2' in sys.argv:
+    import TwitchBotV2 as TwitchBot
+else:
+    import TwitchBot
 import DiscordBot
 import twitch.chat.message
 import dotenv
