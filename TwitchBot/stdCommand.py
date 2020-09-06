@@ -6,6 +6,7 @@ import os
 import TwitchBot.customCommand as customCommand
 import typing
 
+
 class stdCommandsHandler:
     
     commands: dict = \
@@ -46,7 +47,7 @@ class stdCommandsHandler:
             try:
                 msg: str = self.channelObj.customCommands[variable]['help']
             except Exception:
-                chat.send("this command doesn't have a help string")
+                self.chat.send("this command doesn't have a help string")
             else:
                 self.chat.send(msg)
         
@@ -55,17 +56,17 @@ class stdCommandsHandler:
         if self.channelObj.ismod(sender) is True:
             # add a custom command
             await self.channelObj.customCommandhandler.add(variable)
-            with open('./channels.json', 'r+') as file:
+            with open('./channels.json', 'r') as file:
                 data = json.load(file)
-                data[f'#{self.channel}']['customCommand'] = self.channelObj.customCommands
+            data[f'#{self.channel}']['customCommands'] = self.channelObj.customCommands
+            with open('./channels.json', 'w') as file:
                 json.dump(data, file, indent=4)
         else:
             self.chat.send('To perform this action mod permissions are required')
-        
 
     async def cmds(self, variable: str, sender: str):
         self.chat.send(
-            f'avaiable commands: help, addCommand, cmds, cs, \
+            'avaiable commands: help, addCommand, cmds, cs, \
             saveChannelData, sendChannelData, evalPi, (de)mod, \
             (de)op'
         )
@@ -112,7 +113,6 @@ class stdCommandsHandler:
             )
         else:
             self.chat.send('To perform this action mod permissions are required')
-        
 
     async def evalPi(self, variable: str, sender: str):
         if self.channelObj.isop(sender):
@@ -150,7 +150,7 @@ class stdCommandsHandler:
         else:
             self.chat.send('To perform this action op permissions are required')
 
-    async def echo(self, variable: str,sender: str):
+    async def echo(self, variable: str, sender: str):
         if variable == '':
             self.chat.send('This command requires a variable')
             return
@@ -159,4 +159,3 @@ class stdCommandsHandler:
         else:
             self.chat.send(variable)
             return
-    

@@ -2,8 +2,11 @@
   <dictionary name="Flavia">
     <words>
       <w>actionkey</w>
+      <w>commandhandler</w>
       <w>hjson</w>
       <w>infos</w>
+      <w>ismod</w>
+      <w>isop</w>
       <w>urljson</w>
     </words>
   </dictionary>

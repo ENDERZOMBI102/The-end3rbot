@@ -12,6 +12,8 @@ class customCommandsHandler:
     channel: str
     # custom commands data
     customCommandsData: dict
+    # channel obj
+    channelObj: object
 
     def __init__( self ):
         pass
@@ -35,7 +37,7 @@ class customCommandsHandler:
         self.chat.send('checking syntax..')
         # check if it is already defined before checking the command
         if data['name'] in self.channelObj.customCommands.keys():
-            self.chat.send('you can\'t overwrite a command!')
+            self.chat.send("you can't overwrite a command!")
             return
         # this section check the command syntax
         #  send check
@@ -90,7 +92,7 @@ class customCommandsHandler:
                     self.chat.send('no "{var}" in "send" value ('+data['send']+')')
                     return
         if 'evalPi' in data.keys():
-            self.chat.send('WARNING: evalPi action is present! that requires op powers!')
+            self.chat.send('WARNING: evalPi action is present! that will make the command require op powers!')
         if 'name' not in data.keys():
             self.chat.send('you forgot the command name..')
             return
@@ -188,7 +190,7 @@ class customCommandsHandler:
                 try:
                     text = text.replace(
                         '{var}',
-                        customCommandsData[comDict['data']['load']]
+                        self.customCommandsData[comDict['data']['load']]
                     )
                 except:
                     self.chat.send(f'An error occurred while processing "load": no variable named {comDict["data"]["load"]}')
@@ -197,9 +199,9 @@ class customCommandsHandler:
             if 'saveAs' in comDict['data'].keys():
                 saveData: list = comDict['data']['saveAs']  # for semplicity
                 if len(saveData) == 1:
-                    customCommandsData[saveData[0]] = variable
+                    self.customCommandsData[saveData[0]] = variable
                 elif len(saveData) == 2:
-                    customCommandsData[saveData[0]] = req.get(saveData[1]).text
+                    self.customCommandsData[saveData[0]] = req.get(saveData[1]).text
                 else:
                     self.chat.send('too many values for "saveAs"! no variable has been saved!')
                     return
