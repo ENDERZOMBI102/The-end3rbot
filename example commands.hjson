@@ -16,10 +16,9 @@
     },
     // this is an example implementing a ban command
     "ban" : {
-        "send": "/ban {}",
+        "send": "/ban {para}",
         "varIsPing": true, // this can be omitted, this makes the command strip the @
         "needVar": true,
-        "paramReplace" : "{}"
     },
     // this is an example implementing a "whats the latest version of" command
     "lastversion" : {
