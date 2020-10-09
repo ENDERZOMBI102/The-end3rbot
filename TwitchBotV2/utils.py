@@ -2,20 +2,15 @@
 
 def createChannelDict(channel: str) -> dict:
         channel = channel.lower()
-        if '#' in channel:
-            channel = channel.replace('#','')
         return {
-            f'#{channel}' : {
-                'symbol' : '!',
+            {
+                'channel' : f'#{channel}' if '#' not in channel else channel,
                 'hasOtherBots' : False,
-                'moderators' : [
-                    
-                ],
+                'prefix' : '!',
+                'moderators' : [],
                 'operators'  : [
                     channel
                 ],
-                'customCommands' : {
-
-                }
+                'customCommands' : {}
             }
         }
