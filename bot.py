@@ -9,10 +9,22 @@ from typing import List
 dotenv.load_dotenv()
 
 
+# check channels file
 path = Path('./channels.json')
 if not path.exist():
-    
+    with path.open('x') as file:
+        json.dump([], file)
 
+
+# read the file
+with path.open('r') as file:
+    data = json.load(file)
+
+
+botInstances: List[TwitchBot.Channel] = []
+
+for i in data:
+    botInstances.append( TwitchBot.Channel(i) )
 
 
 while True:
@@ -27,7 +39,7 @@ while True:
         print('bye!')
         exit()
     elif com == 'add':
-        botInstances.append( TwitchBot.Channel(var) )
+        botInstances.append( TwitchBot.Channel.create( var ) )
         print(f'turned on instance {var}')
     elif com == 'off':
         for i in range( len( botInstances ) ):

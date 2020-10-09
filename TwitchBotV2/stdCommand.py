@@ -3,7 +3,7 @@ import keyboard
 import asyncio
 import json
 import os
-import TwitchBot.customCommand as customCommand
+import TwitchBotV2.customCommand as customCommand
 import typing
 
 class stdCommandsHandler:
@@ -23,13 +23,14 @@ class stdCommandsHandler:
         'deop':'makes the given user no loger an op, requires op powers',
         'echo':'echo echo echo',
     }
+
     channel: str
     chat: twitch.Chat
 
     def __init__(self, channel: object):
         self.channel = channel.channel
         self.chat = channel.chat
-        import TwitchBot.Channel as Channel
+        import TwitchBotV2.Channel as Channel
         self.channelObj: Channel.Channel = channel
 
     # commands declarations have this syntax:
@@ -55,9 +56,10 @@ class stdCommandsHandler:
         if self.channelObj.ismod(sender) is True:
             # add a custom command
             await self.channelObj.customCommandhandler.add(variable)
-            with open('./channels.json', 'r+') as file:
+            with open('./../channels.json', 'r') as file:
                 data = json.load(file)
-                data[f'#{self.channel}']['customCommand'] = self.channelObj.customCommands
+            data[f'#{self.channel}']['customCommand'] = self.channelObj.customCommands
+            with open('./../channels.json')
                 json.dump(data, file, indent=4)
         else:
             self.chat.send('To perform this action mod permissions are required')
@@ -65,23 +67,23 @@ class stdCommandsHandler:
 
     async def cmds(self, variable: str, sender: str):
         self.chat.send(
-            f'avaiable commands: help, addCommand, cmds, cs, \
+            f'avaiable commands: help, addCommand, cmds, cp, \
             saveChannelData, sendChannelData, evalPi, (de)mod, \
             (de)op'
         )
     
-    async def cs(self, variable: str, sender: str):
+    async def cp(self, variable: str, sender: str):
         if self.channelObj.ismod(sender):
             variable = variable.strip()
             if len(variable) > 1:
-                self.chat.send('the symbol is max 1 character')
+                self.chat.send('the prefix is max 1 character')
                 return
             elif variable in ['', ' ']:
-                self.chat.send('symbol not valid')
+                self.chat.send('prefix not valid')
                 return
             else:
-                self.channelObj.symbol = variable
-                self.chat.send(f'symbol has been changed to {variable}')
+                self.channelObj.prefix = variable
+                self.chat.send(f'prefix has been changed to {variable}')
         else:
             self.chat.send('To perform this action mod permissions are required')
 
