@@ -2,11 +2,17 @@
   <dictionary name="Flavia">
     <words>
       <w>actionkey</w>
+      <w>cmds</w>
       <w>commandhandler</w>
+      <w>commandname</w>
+      <w>demod</w>
+      <w>deop</w>
       <w>hjson</w>
       <w>infos</w>
       <w>ismod</w>
       <w>isop</w>
+      <w>pubsub</w>
+      <w>splitted</w>
       <w>urljson</w>
     </words>
   </dictionary>
